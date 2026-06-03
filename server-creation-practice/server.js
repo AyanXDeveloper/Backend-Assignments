@@ -34,27 +34,22 @@ server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-// File operations moved outside of critical path for better performance and Vercel compatibility
-if (process.env.NODE_ENV !== 'production') {
-  try {
-    const readFile = fs.readFileSync("random.txt", "utf-8")
-    console.log(readFile);
 
-    fs.writeFileSync("abc.txt", "This is a new file created using fs module in Node.js named abc.txt")
+const readFile = fs.readFileSync("random.txt", "utf-8")
+console.log(readFile);
 
-    const readTextFile = fs.readFileSync("abc.txt", "utf-8")
-    console.log(readTextFile);
+fs.writeFileSync("abc.txt", "This is a new file created using fs module in Node.js named abc.txt")
 
-    fs.readFile("random.txt", "utf-8", (err, data) => {
+const readTextFile = fs.readFileSync("abc.txt", "utf-8")
+console.log(readTextFile);
 
-      if (err) {
-          console.log(err);
-          return;
-      } else if (data) {
-          return console.log(data);
-      }
-    })
-  } catch (error) {
-    console.error('File operation error:', error.message);
-  }
-}
+fs.readFile("random.txt", "utf-8", (err, data) => {
+
+    if (err) {
+        console.log(err);
+        return;
+    } else if (data) {
+        return console.log(data);
+    }
+
+})
