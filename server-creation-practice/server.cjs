@@ -35,21 +35,21 @@ server.listen(PORT, () => {
 });
 
 
-const readFile = fs.readFileSync("random.txt", "utf-8")
-console.log(readFile);
+// const readFile = fs.readFileSync("random.txt", "utf-8")
+// console.log(readFile);
 
-fs.writeFileSync("abc.txt", "This is a new file created using fs module in Node.js named abc.txt")
+// fs.writeFileSync("abc.txt", "This is a new file created using fs module in Node.js named abc.txt")
 
-const readTextFile = fs.readFileSync("abc.txt", "utf-8")
-console.log(readTextFile);
+// const readTextFile = fs.readFileSync("abc.txt", "utf-8")
+// console.log(readTextFile);
 
-fs.readFile("random.txt", "utf-8", (err, data) => {
+// fs.readFile("random.txt", "utf-8", (err, data) => {
 
-    if (err) {
-        console.log(err);
-        return;
-    } else if (data) {
-        return console.log(data);
-    }
+//     if (err) {
+//         console.log(err);
+//         return;
+//     } else if (data) {
+//         return console.log(data);
+//     }
 
-})
+// })
