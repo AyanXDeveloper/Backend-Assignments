@@ -16,11 +16,23 @@ const users = Array.from({ length: 100 }, (_, index) => ({
   isActive: Math.random() > 0.5,
 }));
 
-app.get("/", (req, res)=> {
-    res.send("<h1>This is the home Page</h1>")
+app.get("/", (req, res) => {
+  res.send("<h1>This is the home Page</h1>")
 })
-app.get("/users", (req, res)=> {
-    res.send(users)
+app.get("/users", (req, res) => {
+  res.send(users)
+})
+app.get("/clothes", (req, res) => {
+  res.send("<h1>This is the Clothing Page</h1>")
+})
+app.get("/shoes", (req, res) => {
+  res.send("<h1>This is the Shoes Page</h1>")
+})
+app.get("/medicines", (req, res) => {
+  res.send("<h1>This is the Medicines Page</h1>")
+})
+app.get("/products", (req, res) => {
+  res.send("<h1>This is the Products Page</h1>")
 })
 
 app.listen(3000)
